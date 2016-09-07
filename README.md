@@ -21,6 +21,13 @@ Before that, I had to calculate the cost function which I did using the vectoriz
 
 ![Cost Function](http://oi66.tinypic.com/8znsm1.jpg)
 
+### Result
+The gradient descent was able to predict after 1500 iterations, the best values for theta that would converge in the minimum. The corresponding hypothesis visualized among the data looks like this.
+
+![Hypothesis optimized](http://oi66.tinypic.com/339uhhv.jpg)
+
+With these results, we were able to predict the profit for a food truck given a city with a different population.
+
 ### Visualizations
 
 The next graphs show the surface and contour plots that allow us to visualize the minimum value of thetas that produce the most accurate hypothesis.
