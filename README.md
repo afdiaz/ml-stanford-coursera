@@ -6,7 +6,10 @@ These are my solutions to the programming assignments.
 
 ##Week 2 Linear Regression with Multiple Variables & Octave/Matlab Tutorial
 
+### Overview of the solution
 This week, we calculated the profit of a food truck company based on the data of profits each food truck has in different cities and their corresponding populations.
+
+![Profit of food trucks by city population](http://oi64.tinypic.com/2uid4e1.jpg)
 
 The mandatory exercises were of gradient descent with one feature and the optional ones have multiple features.
 
@@ -17,3 +20,11 @@ I solved the gradient descent with one feature doing an iteration over the sum o
 Before that, I had to calculate the cost function which I did using the vectorized method.
 
 ![Cost Function](http://oi66.tinypic.com/8znsm1.jpg)
+
+### Visualizations
+
+The next graphs show the surface and contour plots that allow us to visualize the minimum value of thetas that produce the most accurate hypothesis.
+
+| Surface       | Contour Plot  |
+| ------------- |:-------------:|
+|![Surface](http://oi64.tinypic.com/2nh3fvm.jpg)|![Contour](http://oi66.tinypic.com/15whzlc.jpg)|
