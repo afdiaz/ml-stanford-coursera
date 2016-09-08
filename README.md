@@ -17,6 +17,10 @@ I solved the gradient descent with one feature doing an iteration over the sum o
 
 ![Gradient Descent algorithm](http://oi67.tinypic.com/2mwe7wl.jpg)
 
+I also solved it with the vectorized/matriz implementation which is much quicker.
+
+![Gradient Descent algorithm](http://oi67.tinypic.com/2mwe7wl.jpg)
+
 Before that, I had to calculate the cost function which I did using the vectorized method.
 
 ![Cost Function](http://oi66.tinypic.com/8znsm1.jpg)
@@ -24,7 +28,7 @@ Before that, I had to calculate the cost function which I did using the vectoriz
 ### Result
 The gradient descent was able to predict after 1500 iterations, the best values for theta that would converge in the minimum. The corresponding hypothesis visualized among the data looks like this.
 
-![Hypothesis optimized](http://oi66.tinypic.com/339uhhv.jpg)
+![Gradient Descent's Matrix implementation](http://oi66.tinypic.com/n32ed0.jpg)
 
 With these results, we were able to predict the profit for a food truck given a city with a different population.
 
