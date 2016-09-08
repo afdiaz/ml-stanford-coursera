@@ -16,24 +16,29 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
-    number_of_thetas = length(theta);
-    new_theta = zeros(number_of_thetas,1);
-    for j = 1:number_of_thetas
-      sum_of_prediction_deviations = 0;
-      for i = 1:m
-        %h(x)=X*theta
-        hx = X(i,:) * theta;
-        prediction_deviation = (hx - y(i,:))*X(i,j);
-        sum_of_prediction_deviations = sum_of_prediction_deviations + prediction_deviation;
-      end
-      new_theta(j) = theta(j) - (alpha/m)*sum_of_prediction_deviations;
-    end
 
-    theta = new_theta;
+    % Iteration Implementation
+    % number_of_thetas = length(theta);
+    % new_theta = zeros(number_of_thetas,1);
+    % for j = 1:number_of_thetas
+    %   sum_of_prediction_deviations = 0;
+    %   for i = 1:m
+    %     %h(x)=X*theta
+    %     hx = X(i,:) * theta;
+    %     prediction_deviation = (hx - y(i,:))*X(i,j);
+    %     sum_of_prediction_deviations = sum_of_prediction_deviations + prediction_deviation;
+    %   end
+    %   new_theta(j) = theta(j) - (alpha/m)*sum_of_prediction_deviations;
+    % end
+    % theta = new_theta;
+
+    %Vectorized implementation
+    derivate = (X'*(X*theta - y))/m;
+    theta = theta - alpha*derivate;
 
     % Save the cost J in every iteration
     cost = computeCost(X, y, theta);
-    sprintf('Gradient: %d Cost: %d',iter,cost)
+    sprintf('Cost: %d Theta: %d',cost,theta)
     J_history(iter) = cost;
 
 end
