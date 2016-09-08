@@ -38,7 +38,6 @@ for iter = 1:num_iters
 
     % Save the cost J in every iteration
     cost = computeCost(X, y, theta);
-    sprintf('Cost: %d Theta: %d',cost,theta)
     J_history(iter) = cost;
 
 end

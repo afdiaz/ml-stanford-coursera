@@ -32,6 +32,8 @@ The gradient descent was able to predict after 1500 iterations, the best values 
 
 With these results, we were able to predict the profit for a food truck given a city with a different population.
 
+![Hypothesis and data](http://oi66.tinypic.com/zl6xwx.jpg)
+
 ### Visualizations
 
 The next graphs show the surface and contour plots that allow us to visualize the minimum value of thetas that produce the most accurate hypothesis.
@@ -47,5 +49,6 @@ The exercise is to predict the sell price of a house given two features: It's si
 #### Feature normalization
 The first step was to normalize the features using mean normalization. This will guarantee that all features are within the range of -1 <= xi <=1 and that the normalized matrix with have mean 0 and standard deviation 1. To do this, I used dimensional analysis instead of loops to calculate the normalized matrix.
 
-*The normalization formula was:*
+_The normalization formula was:_
+
 ![Mean normalization of features i](http://oi67.tinypic.com/332td6q.jpg)
