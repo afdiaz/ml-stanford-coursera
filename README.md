@@ -39,3 +39,13 @@ The next graphs show the surface and contour plots that allow us to visualize th
 | Surface       | Contour Plot  |
 | ------------- |:-------------:|
 |![Surface](http://oi64.tinypic.com/2nh3fvm.jpg)|![Contour](http://oi66.tinypic.com/15whzlc.jpg)|
+
+
+### Multiple features linear regression
+The exercise is to predict the sell price of a house given two features: It's size and the number of bedrooms it has.
+
+#### Feature normalization
+The first step was to normalize the features using mean normalization. This will guarantee that all features are within the range of -1 <= xi <=1 and that the normalized matrix with have mean 0 and standard deviation 1. To do this, I used dimensional analysis instead of loops to calculate the normalized matrix.
+
+*The normalization formula was:*
+![Mean normalization of features i](http://oi67.tinypic.com/332td6q.jpg)
