@@ -46,9 +46,25 @@ The next graphs show the surface and contour plots that allow us to visualize th
 ### Multiple features linear regression
 The exercise is to predict the sell price of a house given two features: It's size and the number of bedrooms it has.
 
-#### Feature normalization
+### Feature normalization
 The first step was to normalize the features using mean normalization. This will guarantee that all features are within the range of -1 <= xi <=1 and that the normalized matrix with have mean 0 and standard deviation 1. To do this, I used dimensional analysis instead of loops to calculate the normalized matrix.
 
 _The normalization formula was:_
 
 ![Mean normalization of features i](http://oi67.tinypic.com/332td6q.jpg)
+
+### Cost Calculation and Gradient Descent
+The vectorized/matrix implementations done previously for the cost calculation and the gradient descent also apply to the multiple variables, since we are using the same hypothesis.
+
+### Learning rate
+To get insights into what the best learning rate for the algorithm was, I plotted multiple figures, each with a learning rate that increased at about 3 times the previous rate. The best learning value found was about 1 as the algorithm started to diverge at around 1.5.
+
+| Different Alpha Rates Tested       | Best Learning Rate found  |
+| ------------- |:-------------:|
+|![Alpha rates tested](http://oi64.tinypic.com/2zhe5px.jpg)|![Best Learning Rate](http://oi65.tinypic.com/2vl0djd.jpg)|
+
+
+### Normal Equation
+With the normal equation, we can also find theta without having to set alpha or to iterate like in gradient descent. This is good for a low amount of features but would be bad if n is very larger. The normal equation is:
+
+![Normal Equation](http://oi65.tinypic.com/2a5aibs.jpg)
