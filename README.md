@@ -5,8 +5,8 @@ The exercises correspond to the course available through Coursera from September
 These are my solutions to the programming assignments.
 
 #### Table of Contents
-![Week 3 - Logistic Regression](#logistic-regression)
-![Week 2 - Linear Regression with Multiple Variables](#linear-regression)
+  [Week 3 - Logistic Regression](#logistic-regression)
+  [Week 2 - Linear Regression with Multiple Variables](#linear-regression)
 
 <a name="logistic-regression"/>
 ##Week 3 Logistic Regression
