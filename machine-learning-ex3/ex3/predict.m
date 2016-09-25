@@ -32,12 +32,12 @@ a2 = sigmoid(z2)';
 
 % Add a0 of layer = 1
 ma2 = size(a2, 1);
-
 a2 = [ones(ma2, 1), a2];
 
 z3 = Theta2 * a2';
 a3 = sigmoid(z3)';
 
+% Get the maximum probability of each index and also get the index so we know which number was predicted.
 [k_probability, k_value_predicted] = max( a3, [], 2);
 
 p = k_value_predicted;

@@ -5,8 +5,45 @@ The exercises correspond to the course available through Coursera from September
 These are my solutions to the programming assignments.
 
 #### Table of Contents
+  [Week 4 - Neural Networks: Representation](#neural-networks-representation)
   [Week 3 - Logistic Regression](#logistic-regression)
   [Week 2 - Linear Regression with Multiple Variables](#linear-regression)
+
+<a name="neural-networks-representation"/>
+##Week 4 Neural Networks Representation
+
+### Overview of the solution
+This week, we implemented a one-vs-all logistic regression classification algorithm to recognize handwritten digits. We also used a neural network to
+predict the digits given a layer of pre-learned weights and applying the feedforward propagation algorithm.
+
+### One vs all
+In the one vs all method, we want to train a classification algorithm for each
+of the possible digits from 1-10. For this, we first had to do the vectorized implementation of logistic regression which included the vectorized implementation of the cost function and the gradient function.
+
+Once we had these implementations, we used the fmincg function from octave which performs better than the fminunc with a large number of parameters.
+
+Something really interesting, was that we would get the probability of the digit being any of the digits from 1-10 and we would use the max function to get the index of the digit represented that had the maximum probability.
+
+```
+predictions_for_each_k = sigmoid( X * all_theta' );
+[k_probability, k_value_predicted] = max( predictions_for_each_k, [], 2);
+p = k_value_predicted;
+```
+
+The algorithm classified with 94.9% accuracy correctly on the training set.
+
+![Predicting digits](http://pho.to/ALEqC/wa)
+
+### Neural Networks
+For the neural networks, we were given a pre-trained set of Theta1 and Theta2 that would be used to implement the feedforward propagation algorithm.
+
+We only had to complete the prediction code to calculate the output of the hidden layer and the output layer.
+
+![Neural Network](http://pho.to/ALEqC/8e)
+
+Then, the code provided would randomly create samples and predict using our code with a 97.5% accuracy.
+
+![Predictions in real time](http://pho.to/ALEqC/2n)
 
 <a name="logistic-regression"/>
 ##Week 3 Logistic Regression
