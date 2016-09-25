@@ -32,18 +32,18 @@ p = k_value_predicted;
 
 The algorithm classified with 94.9% accuracy correctly on the training set.
 
-![Predicting digits](http://pho.to/ALEqC/wa)
+![Predicting digits](http://s14.postimg.org/fwtpns5tt/Screen_Shot_2016_09_25_at_6_13_30_PM.png)
 
 ### Neural Networks
 For the neural networks, we were given a pre-trained set of Theta1 and Theta2 that would be used to implement the feedforward propagation algorithm.
 
 We only had to complete the prediction code to calculate the output of the hidden layer and the output layer.
 
-![Neural Network](http://pho.to/ALEqC/8e)
+![Neural Network](http://s14.postimg.org/5k7f1pcap/Screen_Shot_2016_09_25_at_6_24_40_PM.png)
 
 Then, the code provided would randomly create samples and predict using our code with a 97.5% accuracy.
 
-![Predictions in real time](http://pho.to/ALEqC/2n)
+![Predictions in real time](http://s14.postimg.org/3toe07url/Sep_25_2016_18_15_36.gif)
 
 <a name="logistic-regression"/>
 ##Week 3 Logistic Regression
