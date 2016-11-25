@@ -62,63 +62,38 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
-% Add the column of 1's to the X matrix
+y_matrix = eye(num_labels)(y,:);
+
 a1 = [ones(m, 1), X];
-z2 = Theta1 * a1';
-a2 = sigmoid(z2)';
+z2 = a1 * Theta1';
+a2 = sigmoid(z2);
 a2 = [ones(m, 1), a2];
-z3 = Theta2 * a2';
-hx = sigmoid(z3)';
+z3 = a2 * Theta2';
+a3 = sigmoid(z3);
+hx = a3;
 
-for (k = 1:num_labels)
-  yk = y == k;
-  hk = hx(:, k);
-  Jk = 1 / m * (-yk' * log(hk) - (1 - yk)' * log(1 - hk));
-  J = J + Jk;
-end
+penalty = sum(sum(Theta1(:, 2:end).^2, 2))+sum(sum(Theta2(:, 2:end).^2, 2));
 
-regTheta1 = sum(Theta1(:,2:end) .^ 2);
-regTheta2 = sum(Theta2(:,2:end) .^ 2);
-regularization = (lambda/(2 * m)) * ( sum(regTheta1) + sum(regTheta2) );
-J = J + regularization;
+J = (1/m) * sum(sum( (-y_matrix).*log(hx) - (1 - y_matrix).*log(1-hx), 2)) + lambda*penalty/(2*m);
 
-% for t = 1:m
-%     for k = 1:num_labels
-%         yk = y(t) == k;
-%         delta_3(k) = hx(t, k) - yk;
-%     end
-%     delta_2 = Theta2' * delta_3' .* sigmoidGradient([1, z2(t, :)])';
-%     delta_2 = delta_2(2:end);
-%
-%     Theta1_grad = Theta1_grad + delta_2 * a1(t, :);
-%     Theta2_grad = Theta2_grad + delta_3' * a2(t, :);
-% end
-%
-% Theta1_grad = Theta1_grad / m;
-% Theta2_grad = Theta2_grad / m;
-%
-%
-% Theta1_grad(:, 2:end) = Theta1_grad(:, 2:end) + lambda / m * Theta1(:, 2:end);
-% Theta2_grad(:, 2:end) = Theta2_grad(:, 2:end) + lambda / m * Theta2(:, 2:end);
+% Perform back propagation. Calculate the error and then the Delta.
+d3 = a3 - y_matrix;
+d2 = d3 * Theta2(:, 2:end) .* sigmoidGradient(z2);
 
-for t = 1:m
-  for k = 1:num_labels
-    yk = y(t) == k;
-    d3(k) = hx(t, k) - yk;
-  end
-  d2 = Theta2' * d3' .* sigmoidGradient([1, z2(t, :)]);
-  d2 = d2(2:end);
+Delta1 = d2' * a1;
+Delta2 = d3' * a2;
 
-  Theta1_grad = Theta1_grad + d2' * a1(t, :);
-  Theta2_grad = Theta2_grad + d3' * a2(t, :);
-end
+Theta1_grad = Delta1/m;
+Theta2_grad = Delta2/m;
 
-Theta1_grad = Theta1_grad / m;
-Theta2_grad = Theta2_grad / m;
 
-% -------------------------------------------------------------
-
-% =========================================================================
+% Add regularization to the gradients
+Theta1_r = Theta1;
+Theta1_r(:,1) = 0;
+Theta2_r = Theta2;
+Theta2_r(:,1) = 0;
+Theta1_grad = Theta1_grad + (lambda/m) * Theta1_r;
+Theta2_grad = Theta2_grad + (lambda/m) * Theta2_r;
 
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
